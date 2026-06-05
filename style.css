@@ -783,7 +783,7 @@ html[lang="en"] .review-text{
   .glass{ margin-top:96px; }
 
   .landing-phone{
-    font-size:20px; /* slightly smaller so numbers fit on one line */
+    font-size:22px; /* slightly smaller so numbers fit on one line */
     white-space:nowrap;
     display:inline-block;
   }
