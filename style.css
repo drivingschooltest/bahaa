@@ -398,14 +398,15 @@ html[lang="en"] .review-text{
 .landing-hero{
   min-height:100vh;
   position:relative;
-  background-image:url("assets/sa.jpeg");
+  background-image:url("assets/tem.jpeg");
   background-size:cover;
   background-repeat:no-repeat;
   background-position: center top 40%;
   display:flex;
   align-items:center;
   justify-content:center;
-  padding:90px 18px 40px;
+  /* increased top padding to create space below desktop logo */
+  padding:200px 18px 40px;
   text-align:center;
   color:#fff;
 }
@@ -445,7 +446,7 @@ html[lang="en"] .review-text{
 
 .landing-phone{
   margin:8px 0 4px;
-  font-size:18px;
+  font-size:22px;
   font-weight:900;
   letter-spacing:1px;
   color:rgba(255,255,255,.9);
@@ -455,7 +456,7 @@ html[lang="en"] .review-text{
 .landing-phone::before{ content:" ☎ "; opacity:.85; }
 
 .landing-location{
-  font-size: 16px;
+  font-size: 20px;
   display:flex;
   justify-content:center;
   margin-top:6px;
@@ -477,7 +478,7 @@ html[lang="en"] .review-text{
 }
 
 .glass{
-  margin-top:80px;
+  margin-top:120px;
   position:relative;
   z-index:2;
   width:min(980px, 100%);
@@ -495,6 +496,12 @@ html[lang="en"] .review-text{
   font-weight:900;
   color:#fff;
 }
+
+/* Tighten title lines for a cleaner stacked title */
+.landing-title{
+  line-height:1.05;
+}
+.landing-title br{ display:block; margin:6px 0; }
 
 .landing-subtitle{
   margin:12px 0 0;
@@ -746,7 +753,7 @@ html[lang="en"] .review-text{
 }
 
 .hero-logo img {
-  height: 220px;           /* desktop size - increased */
+  height: 200px;           /* desktop size - increased */
   width: auto;
   display: block;
 }
@@ -759,26 +766,34 @@ html[lang="en"] .review-text{
     transform: translateX(-50%);
   }
 
+  /* make the logo slightly smaller on most phones */
   .hero-logo img {
-    height: 140px;
+    height: 140px; /* bigger logo on phones */
   }
 }
 
 /* Mobile logo spacing & compact phone number */
 @media (max-width: 768px) {
+  /* increase reserved space so there's clear gap below the logo */
   .landing-hero{
-    padding-top: 250px; /* reserve more space for the centered logo */
+    padding-top: 320px; /* more space for larger centered logo */
   }
 
+  /* add slightly larger top margin to the glass card for breathing room */
+  .glass{ margin-top:96px; }
+
   .landing-phone{
-    font-size:15px; /* slightly smaller so numbers fit on one line */
+    font-size:20px; /* slightly smaller so numbers fit on one line */
     white-space:nowrap;
     display:inline-block;
   }
 }
 
 @media (max-width: 380px){
-  .landing-hero{ padding-top:250px; }
+  /* extra spacing for very small screens */
+  .landing-hero{ padding-top:300px; }
+  /* slightly smaller logo on the very smallest screens to avoid overflow */
+  .hero-logo img { height: 170px; }
   .landing-phone{ font-size:14px; }
 }
 
